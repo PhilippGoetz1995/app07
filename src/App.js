@@ -5,69 +5,71 @@ import { v4 as uuidv4 } from 'uuid';
 
 function App() {
   const [role, setRole] = useState('dev');
+
   const [employees, setEmployees] = useState([
     {
-      id: 1,
-      key: uuidv4(),
+      id: uuidv4(),
+      key: 1,
       name: 'Caleb',
       role: 'YouTube Sensation',
       img: 'https://images.pexels.com/photos/3831645/pexels-photo-3831645.jpeg',
     },
     {
-      id: 2,
-      key: uuidv4(),
+      id: uuidv4(),
+      key: 2,
       name: 'Sal',
       role: 'Manager',
       img: 'https://images.pexels.com/photos/3586798/pexels-photo-3586798.jpeg',
     },
     {
-      id: 3,
-      key: uuidv4(),
+      id: uuidv4(),
+      key: 3,
       name: 'John',
       role: 'Director of Eng.',
       img: 'https://images.pexels.com/photos/2095582/pexels-photo-2095582.jpeg',
     },
     {
-      id: 4,
-      key: uuidv4(),
+      id: uuidv4(),
+      key: 4,
       name: 'Melanie',
       role: 'Software Engineer',
       img: 'https://images.pexels.com/photos/3760583/pexels-photo-3760583.jpeg',
     },
     {
-      id: 5,
-      key: uuidv4(),
+      id: uuidv4(),
+      key: 5,
       name: 'Corey',
       role: 'The Devops Guy',
       img: 'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg',
     },
     {
-      id: 6,
-      key: uuidv4(),
+      id: uuidv4(),
+      key: 6,
       name: 'Jake',
       role: 'Senior',
       img: 'https://images.pexels.com/photos/2225298/pexels-photo-2225298.jpeg',
-    },
+    }
   ]);
 
-  console.log(employees[2].key);
-
   function updateEmployee(id, newName, newRole) {
+
+
     const updatedEmployees = employees.map((employee) => {
+
+      //Get the data from the EditEmployee component and create an new array with updated employees
+
       if (id == employee.id) {
+
+        //to not pass all parameter again to the object the employee object will be unpacked by the "..."
         return { ...employee, name: newName, role: newRole };
       }
 
       return employee;
     });
+
     setEmployees(updatedEmployees);
   }
 
-  function simpleOutput(e) {
-
-    //console.log('simple output' + e);
-
-  }
 
   const showEmployees = true;
   return (
@@ -81,9 +83,6 @@ function App() {
             }}
           />
 
-          <Employee key={employees[1].key} />
-
-          {/*
           <div className="flex flex-wrap justify-center">
             {employees.map((employee) => {
               return (
@@ -94,12 +93,10 @@ function App() {
                   role={employee.role}
                   img={employee.img}
                   updateEmployee={updateEmployee}
-                  newFunction={simpleOutput}
                 />
               );
             })}
           </div>
-          */}
         </>
       ) : (
         <p>You cannot see the employees</p>

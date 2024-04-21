@@ -2,8 +2,6 @@ import EditEmployee from './EditEmployee';
 
 function Employee(props) {
 
-    console.log(props.key);
-
     return (
         <div className="min-w-[350px] max-w-[350px] m-2 py-8 px-8 max-w-sm bg-white rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
             <img
@@ -17,16 +15,13 @@ function Employee(props) {
                     </p>
                     <p className="text-slate-500 font-medium">{props.role}</p>
                 </div>
-                {/*
+
                 <EditEmployee
                     id={props.id}
-                    key={props.key}
                     name={props.name}
                     role={props.role}
                     updateEmployee={props.updateEmployee}
-                    newFunction={props.newFunction}
                 />
-                */}
             </div>
         </div>
     );
